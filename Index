@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scale & Mode Practice Tool</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'root-note': '#10b981', // Emerald 500 (Green)
+            'scale-note': '#000000', // Black
+            'fretboard-wood': '#6e4e3e',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --root-note: #10b981;
+      --scale-note: #000000;
+      --fret-mark: #374151;
+    }
 
+    .fretboard-container {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+    .string { stroke: #e5e5e5; stroke-width: 2; }
+    .fret { stroke: #888; stroke-width: 2; }
+    .nut { stroke: var(--fret-mark); stroke-width: 5; }
+    .note-circle { fill: var(--scale-note); transition: all 0.1s; cursor: pointer; }
+    .root-circle { fill: var(--root-note); transition: all 0.1s; cursor: pointer; }
+    .note-label { fill: white; pointer-events: none; }
+    .fret-dot { fill: var(--fret-mark); }
